@@ -8,11 +8,12 @@ public class GunController : MonoBehaviour
     public GameObject Bullet;
 
     private Vector3 _to;
+    private int _ammunition;
 
     // Use this for initialization
     void Start()
     {
-        Cursor.SetCursor(CrosshairTexture, new Vector2(CrosshairTexture.width/2, CrosshairTexture.height/2), CursorMode.Auto);
+        Cursor.SetCursor(CrosshairTexture, new Vector2(CrosshairTexture.width / 2, CrosshairTexture.height / 2), CursorMode.Auto);
     }
 
     public void RotateTo(Vector3 to)
@@ -28,11 +29,15 @@ public class GunController : MonoBehaviour
         float AngleRad = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x);
         float angle = (180 / Mathf.PI) * AngleRad;
 
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle-90));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
     }
 
     public void Fire()
     {        
-        var bullet = ((GameObject)Instantiate(Bullet, transform.position, transform.rotation)).GetComponent<BulletController>();        
+        if (_ammunition > 0)
+        {
+            _ammunition--;
+            var bullet = ((GameObject)Instantiate(Bullet, transform.position, transform.rotation)).GetComponent<BulletController>();
+        }
     }
 }

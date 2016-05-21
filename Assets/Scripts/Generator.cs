@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Generator : MonoBehaviour {
 
@@ -9,7 +8,7 @@ public class Generator : MonoBehaviour {
 
     public void Spawn()
     {
-        GameObject.Instantiate(toSpawn, transform.position, transform.rotation);
+        Instantiate(toSpawn, transform.position, transform.rotation);
     }
 
     private void ResetTimer()
