@@ -19,7 +19,6 @@ public class Consumer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        onConsume = () => Debug.Log("consumed");
 	}
 	
 	// Update is called once per frame
