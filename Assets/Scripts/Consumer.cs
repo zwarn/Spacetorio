@@ -10,7 +10,7 @@ public class Consumer : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.tag + " " + labelsToConsume.ToString());
+        if (labelsToConsume.Contains(other.gameObject.tag))
         {
             Destroy(other.gameObject);
             onConsume();
