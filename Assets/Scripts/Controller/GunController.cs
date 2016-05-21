@@ -6,6 +6,7 @@ public class GunController : MonoBehaviour
 
     public Texture2D CrosshairTexture;
     public GameObject Bullet;
+    public GameObject SpawnPoint;
     public Consumer BulletConsumer;
 
     private Vector3 _to;
@@ -39,7 +40,7 @@ public class GunController : MonoBehaviour
         if (_ammunition > 0)
         {
             _ammunition--;
-            var bullet = ((GameObject)Instantiate(Bullet, transform.position, transform.rotation)).GetComponent<BulletController>();
+            var bullet = ((GameObject)Instantiate(Bullet, SpawnPoint.transform.position, transform.rotation)).GetComponent<BulletController>();
         }
     }
 }
