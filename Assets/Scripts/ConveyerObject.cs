@@ -13,6 +13,9 @@ public class ConveyerObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Tile currentTile = gameController.State.getTile(transform.position.x, transform.position.y);
-        transform.Translate(currentTile.getVector() * currentTile.Speed * Time.deltaTime);
+        if (currentTile != null)
+        {
+            transform.Translate(currentTile.getVector() * currentTile.Speed * Time.deltaTime);
+        }
 	}
 }

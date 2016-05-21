@@ -18,11 +18,13 @@ public class State {
         }
     }
 
-    public Tile getTile(float x, float y)
+    public Tile getTile(float fx, float fy)
     {
-        if (x >= 0 && x < tiles.GetLength(0) && y >= 0 && x < tiles.GetLength(1))
+        int x = Mathf.FloorToInt(fx);
+        int y = Mathf.FloorToInt(fy);
+        if (x >= 0 && x < tiles.GetLength(0) && y >= 0 && y < tiles.GetLength(1))
         {
-            return tiles[Mathf.FloorToInt(x), Mathf.FloorToInt(y)];
+            return tiles[x,y];
         }
         return null;
     }
