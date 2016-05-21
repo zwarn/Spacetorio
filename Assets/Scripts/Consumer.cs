@@ -15,15 +15,5 @@ public class Consumer : MonoBehaviour {
             Destroy(other.gameObject);
             onConsume();
         }
-    }
-
-    // Use this for initialization
-    void Start () {
-        onConsume = () => Debug.Log("consumed");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    } 
 }

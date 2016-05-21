@@ -18,6 +18,7 @@ public class EnemyScript : MonoBehaviour {
         if (other.gameObject.tag == "bullet")
         {
             Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 }
