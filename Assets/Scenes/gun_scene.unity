@@ -311,11 +311,11 @@ Prefab:
       objectReference: {fileID: 2800000, guid: 405f8a3352b16bf499a4b7c94afe80f9, type: 3}
     - target: {fileID: 432710, guid: b826d915859bc3d40b670bdff62a1930, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.309
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 432710, guid: b826d915859bc3d40b670bdff62a1930, type: 2}
       propertyPath: m_LocalScale.y
-      value: 6.865096
+      value: 4.048598
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b826d915859bc3d40b670bdff62a1930, type: 2}
