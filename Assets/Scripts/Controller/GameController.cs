@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
             Instance = this;
         }
         InputController.MouseMove.Add(GunController.RotateTo);
+        InputController.Fire1.Add(GunController.Fire);
 
         State = new State(10);
         for (int x = 0; x < 10; x++)

@@ -5,6 +5,9 @@ public class GunController : MonoBehaviour
 {
 
     public Texture2D CrosshairTexture;
+    public GameObject Bullet;
+
+    private Vector3 _to;
 
     // Use this for initialization
     void Start()
@@ -19,24 +22,17 @@ public class GunController : MonoBehaviour
         // Distance from camera to object.  We need this to get the proper calculation.
         float camDis = cam.transform.position.y - transform.position.y;
 
-        // Get the mouse position in world spaaaaaace. Using camDis for the Z axis.
-        Vector3 mouse = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDis));
+        // Get the mouse position in world space. Using camDis for the Z axis.
+        Vector3 mouse = cam.ScreenToWorldPoint(new Vector3(to.x, to.y, camDis));
 
         float AngleRad = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x);
         float angle = (180 / Mathf.PI) * AngleRad;
 
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle-90));
-
-      /*  var object_pos = Camera.main.WorldToScreenPoint(transform.position);
-        to.x = to.x - object_pos.x;
-        to.y = to.y - object_pos.y;
-        var angle = Mathf.Atan2(to.y, to.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
-        */
     }
 
     public void Fire()
-    {
-        
+    {        
+        var bullet = ((GameObject)Instantiate(Bullet, transform.position, transform.rotation)).GetComponent<BulletController>();        
     }
 }

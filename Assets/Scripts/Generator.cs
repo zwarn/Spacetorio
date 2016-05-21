@@ -7,27 +7,27 @@ public class Generator : MonoBehaviour {
     public int cooldown = 10;
     private float spawntime;
 
-    public void spawn()
+    public void Spawn()
     {
         GameObject.Instantiate(toSpawn, transform.position, transform.rotation);
     }
 
-    private void resetTimer()
+    private void ResetTimer()
     {
         spawntime = Time.time + cooldown;
     }
 
 	// Use this for initialization
 	void Start () {
-        resetTimer();
+        ResetTimer();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	    if (Time.time > spawntime)
         {
-            spawn();
-            resetTimer();
+            Spawn();
+            ResetTimer();
 
         }
 	}
