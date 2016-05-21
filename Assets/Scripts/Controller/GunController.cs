@@ -9,7 +9,7 @@ public class GunController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Cursor.SetCursor(CrosshairTexture, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(CrosshairTexture, new Vector2(CrosshairTexture.width/2, CrosshairTexture.height/2), CursorMode.Auto);
     }
 
     public void RotateTo(Vector3 to)
@@ -25,7 +25,7 @@ public class GunController : MonoBehaviour
         float AngleRad = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x);
         float angle = (180 / Mathf.PI) * AngleRad;
 
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle-90));
 
       /*  var object_pos = Camera.main.WorldToScreenPoint(transform.position);
         to.x = to.x - object_pos.x;
