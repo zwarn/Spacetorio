@@ -15,5 +15,5 @@ public class Consumer : MonoBehaviour {
             Destroy(other.gameObject);
             onConsume();
         }
-    } 
+    }    
 }
