@@ -71,6 +71,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432026}
+  - 114: {fileID: 11486080}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -142,6 +143,18 @@ Transform:
   - {fileID: 432710}
   m_Father: {fileID: 432026}
   m_RootOrder: 1
+--- !u!114 &11486080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b71b223f2c1f545995dbdad5c41af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CrosshairTexture: {fileID: 0}
 --- !u!212 &21231806
 SpriteRenderer:
   m_ObjectHideFlags: 1
