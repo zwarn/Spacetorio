@@ -15,6 +15,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &129938
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 465006}
+  m_Layer: 0
+  m_Name: Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &156504
 GameObject:
   m_ObjectHideFlags: 1
@@ -75,6 +90,7 @@ GameObject:
   - 61: {fileID: 6149686}
   - 50: {fileID: 5008972}
   - 114: {fileID: 11489950}
+  - 114: {fileID: 11454746}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -101,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419440}
@@ -120,6 +136,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 484926}
   m_RootOrder: 1
+--- !u!4 &465006
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1.5, y: 4, z: 0}
+  m_Children: []
+  m_Father: {fileID: 484926}
+  m_RootOrder: 2
 --- !u!4 &480946
 Transform:
   m_ObjectHideFlags: 1
@@ -144,6 +172,7 @@ Transform:
   m_Children:
   - {fileID: 480946}
   - {fileID: 432710}
+  - {fileID: 465006}
   m_Father: {fileID: 432026}
   m_RootOrder: 1
 --- !u!50 &5008972
@@ -177,6 +206,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.07}
   serializedVersion: 2
   m_Size: {x: 0.9, y: 1.03}
+--- !u!114 &11454746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0387f1782ccfbe3478c26814074110a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  labelsToConsume:
+  - bullet
 --- !u!114 &11486080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,6 +232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CrosshairTexture: {fileID: 2800000, guid: 405f8a3352b16bf499a4b7c94afe80f9, type: 3}
   Bullet: {fileID: 153440, guid: 98475f4f3ad5b7449b31e6e8fc63959d, type: 2}
+  SpawnPoint: {fileID: 129938}
+  BulletConsumer: {fileID: 11454746}
 --- !u!114 &11489950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   labelsToConsume:
-  - bullet
+  - ammunition
 --- !u!212 &21231806
 SpriteRenderer:
   m_ObjectHideFlags: 1
