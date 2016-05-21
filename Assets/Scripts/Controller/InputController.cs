@@ -5,11 +5,21 @@ using System.Collections.Generic;
 
 public class InputController : MonoBehaviour
 {
+    public static InputController Instance;
 
     public List<Action<Vector3>> MouseMove;
     public List<Action> Fire1;
+    private Player player;
 
     private Vector3 _lastPos;
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     public InputController()
     {
@@ -31,5 +41,22 @@ public class InputController : MonoBehaviour
         {
             Fire1.ForEach(action => action());
         }
+
+        if (player != null)
+        {
+            float x = Input.GetAxis("Horizontal");
+            float y = Input.GetAxis("Vertical");
+            Vector2 direction = new Vector2(x, y);
+            if (direction.magnitude > 1f)
+            {
+                direction.Normalize();
+            }
+            player.move(direction);
+        }
+    }
+
+    public void registerPlayer(Player player)
+    {
+        this.player = player;
     }
 }
