@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class State {
+public class State
+{
 
     Tile[,] tiles;
 
 
-    public State (int size)
+    public State(int size)
     {
         tiles = new Tile[size, size];
         for (int x = 0; x < size; x++)
@@ -24,7 +24,7 @@ public class State {
         int y = Mathf.FloorToInt(fy);
         if (x >= 0 && x < tiles.GetLength(0) && y >= 0 && y < tiles.GetLength(1))
         {
-            return tiles[x,y];
+            return tiles[x, y];
         }
         return null;
     }
