@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 409310}
-  - 114: {fileID: 11481736}
+  - 114: {fileID: 11443916}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11481736
+--- !u!114 &11443916
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -36,11 +36,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 187840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc376d3363652248a896dbe1c69b196, type: 3}
+  m_Script: {fileID: 11500000, guid: 77903ae580b129e4f888661eb78862d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toSpawn: {fileID: 118348, guid: e85b3ba034dac204ca22e9a9f3c88c0b, type: 2}
   cooldown: 1
+  resourceTemplate: {fileID: 11402110, guid: e85b3ba034dac204ca22e9a9f3c88c0b, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -22,6 +22,12 @@ public class State
     {
         int x = Mathf.FloorToInt(fx);
         int y = Mathf.FloorToInt(fy);
+        return getTile(x, y);
+        
+    }
+
+    public Tile getTile(int x, int y)
+    {
         if (x >= 0 && x < tiles.GetLength(0) && y >= 0 && y < tiles.GetLength(1))
         {
             return tiles[x, y];

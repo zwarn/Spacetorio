@@ -19,14 +19,7 @@ public class GameController : MonoBehaviour
         InputController.Fire1.Add(GunController.Fire);
 
         State = new State(10);
-        for (int x = 0; x < 10; x++)
-        {
-            for (int y = 0; y < 10; y++)
-            {
-                State.getTile(x, y).Speed = 1;
-                State.getTile(x, y).Dir = ((x + y) % 2 == 0) ? Direction.North : Direction.East;
-            }
-        }
+        // Do map setup here
     }
 
 

@@ -16,7 +16,7 @@ public class GunController : MonoBehaviour
     void Start()
     {
         Cursor.SetCursor(CrosshairTexture, new Vector2(CrosshairTexture.width / 2, CrosshairTexture.height / 2), CursorMode.Auto);
-        BulletConsumer.onConsume = () => _ammunition++;
+        BulletConsumer.onConsume = (resource) => _ammunition++;
     }
 
     public void RotateTo(Vector3 to)
