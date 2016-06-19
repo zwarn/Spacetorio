@@ -13,7 +13,7 @@ public class Grid : MonoBehaviour {
 
     public Tile getNeighbor(Tile tile, Direction dir)
     {
-        IntPosition neighborPosition = tile.Position.getNeighbor(dir);
+        IntPosition neighborPosition = tile.Position.GetNeighbor(dir);
         if (!inMap(neighborPosition))
         {
             return null;
