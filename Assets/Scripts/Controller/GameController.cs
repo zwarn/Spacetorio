@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour
     public InputController InputController;
     public GunController GunController;
     public static GameController Instance;
-    public State State;
 
     void Awake()
     {
@@ -17,8 +16,6 @@ public class GameController : MonoBehaviour
         }
         InputController.MouseMove.Add(GunController.RotateTo);
         InputController.Fire1.Add(GunController.Fire);
-
-        State = new State(10);
         // Do map setup here
     }
 
