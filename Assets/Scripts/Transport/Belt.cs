@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System;
 
 /// <summary>
@@ -14,25 +13,45 @@ public class Belt : MonoBehaviour, ResourceTaker {
     public ResourceTaker output;
     public float speed;
 
+    /// <summary>
+    /// Returns <c>true</c> iff the current <see cref="cargo"/> is null, regardless
+    /// of the given resource.
+    /// </summary>
     public bool Accepts(Resource resource)
     {
         return cargo == null;
     }
 
+    /// <summary>
+    /// Puts the given resource onto the conveyor belt. Sets
+    /// the <see cref="progress"/> to zero to indicate that
+    /// the resource is at the beginning of its journey over
+    /// this belt. Calls <see cref="SetPosition()"/> afterwards.
+    /// </summary>
     public void Take(Resource resource)
     {
         if (cargo != null) throw new Exception("Pushed resource to nonempty belt.");
         cargo = resource;
         progress = 0;
-        setPosition();
+        SetPosition();
     }
 
+    /// <summary>
+    /// Iff cargo is not null, its progress is
+    /// computed with regard to the given <see cref="speed"/>.
+    /// Iff the <see cref="progress"/> is greater or equal
+    /// one the cargo will be handed to the registered 
+    /// <see cref="output"/>. Iff there is no <see cref="output"/>
+    /// or it does not accept the cargo nothing happens until
+    /// this state of affair changes. <see cref="SetPosition"/>
+    /// is called afterwards.
+    /// </summary>
     void Update()
     {
         if (cargo == null) return;
 
         progress += speed * Time.deltaTime;
-        if (progress > 1)
+        if (progress >= 1)
         {
             progress = 1;
             if (output != null && output.Accepts(cargo))
@@ -43,10 +62,16 @@ public class Belt : MonoBehaviour, ResourceTaker {
                 return;
             }
         }
-        setPosition();
+        SetPosition();
     }
 
-    private void setPosition()
+    /// <summary>
+    /// Moves the <see cref="cargo"/> to a position given by 
+    /// <see cref="from"/>, <see cref="to"/> and the current
+    /// <see cref="progress"/> by setting its <see cref="GameObject"/>s 
+    /// <see cref="Transform.position"/>.
+    /// </summary>
+    private void SetPosition()
     {
         if (cargo != null)
         {
