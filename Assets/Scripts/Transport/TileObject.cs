@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface TileObject {
+public abstract class TileObject : MonoBehaviour {
     
 }

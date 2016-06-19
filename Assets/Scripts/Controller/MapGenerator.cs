@@ -33,9 +33,10 @@ public class MapGenerator : MonoBehaviour {
 
     private ResourceTaker createBelt(Vector3 from, Vector3 to, ResourceTaker resourceTaker)
     {
+        //TODO: fix - create tiles not nodes
         Vector3 position = Vector3.Lerp(from, to, 0.5f);
         GameObject gameObject = (GameObject) GameObject.Instantiate(beltPrefab, position, Quaternion.identity);
-        Belt belt = gameObject.GetComponent<Belt>();
+        ConveyerNode belt = gameObject.GetComponent<ConveyerNode>();
         belt.from = from;
         belt.to = to;
         belt.speed = 1;

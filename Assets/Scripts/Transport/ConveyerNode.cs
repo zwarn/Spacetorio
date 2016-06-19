@@ -2,9 +2,9 @@
 using System;
 
 /// <summary>
-/// A sample implementation of a conveyor belt.
+/// A node on a conveyor belt.
 /// </summary>
-public class Belt : MonoBehaviour, ResourceTaker {
+public class ConveyerNode : ResourceTaker {
 
     /// <summary>
     /// The starting position of the cargo.
@@ -65,7 +65,7 @@ public class Belt : MonoBehaviour, ResourceTaker {
     /// this state of affair changes. <see cref="SetPosition"/>
     /// is called afterwards.
     /// </summary>
-    void Update()
+    public void Update()
     {
         if (cargo == null) return;
 
