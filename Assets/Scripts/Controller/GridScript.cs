@@ -37,7 +37,7 @@ public class Grid : MonoBehaviour {
 
     public Vector3 toVector(IntPosition position)
     {
-        return getUpperRightCorner() + new Vector3(position.X, position.Y) * tileSize;
+        return getUpperRightCorner() + new Vector3(position.X, position.Y) * tileSize + new Vector3(tileSize, tileSize)/2;
     }
 
     public IntPosition toPosition(Vector3 vector)
@@ -48,7 +48,7 @@ public class Grid : MonoBehaviour {
 
     private IntPosition round(Vector3 vector)
     {
-        return new IntPosition(Mathf.RoundToInt(vector.x), Mathf.RoundToInt(vector.y));
+        return new IntPosition(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y));
     }
 
     private Vector3 getUpperRightCorner()
