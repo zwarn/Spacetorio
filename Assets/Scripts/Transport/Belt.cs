@@ -6,12 +6,31 @@ using System;
 /// </summary>
 public class Belt : MonoBehaviour, ResourceTaker {
 
+    /// <summary>
+    /// The starting position of the cargo.
+    /// </summary>
+    public Vector3 from;
+    
+    /// <summary>
+    /// The final position of the cargo before
+    /// it is handed over to the output.
+    /// </summary>
+    public Vector3 to;
+
+    /// <summary>
+    /// The output that will take the cargo
+    /// when the progress reaches one.
+    /// </summary>
+    public ResourceTaker output;
+
+    /// <summary>
+    /// The speed with which the cargo moves
+    /// over the conveyer belt.
+    /// </summary>
+    public float speed;
+
     private Resource cargo;
     private float progress;
-    public Vector3 from;
-    public Vector3 to;
-    public ResourceTaker output;
-    public float speed;
 
     /// <summary>
     /// Returns <c>true</c> iff the current <see cref="cargo"/> is null, regardless
