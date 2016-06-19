@@ -3,8 +3,8 @@ using System.Collections;
 
 public interface ResourceTaker {
 
-    bool accepts(Resource resource);
+    bool Accepts(Resource resource);
 
-    void take(Resource resource);
+    void Take(Resource resource);
 
 }

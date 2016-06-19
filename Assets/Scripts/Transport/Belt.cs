@@ -2,6 +2,9 @@
 using System.Collections;
 using System;
 
+/// <summary>
+/// A sample implementation of a conveyor belt.
+/// </summary>
 public class Belt : MonoBehaviour, ResourceTaker {
 
     private Resource cargo;
@@ -11,14 +14,14 @@ public class Belt : MonoBehaviour, ResourceTaker {
     public ResourceTaker output;
     public float speed;
 
-    public bool accepts(Resource resource)
+    public bool Accepts(Resource resource)
     {
         return cargo == null;
     }
 
-    public void take(Resource resource)
+    public void Take(Resource resource)
     {
-        if (cargo != null) throw new Exception("pushed resource to nonempty belt");
+        if (cargo != null) throw new Exception("Pushed resource to nonempty belt.");
         cargo = resource;
         progress = 0;
         setPosition();
@@ -32,9 +35,9 @@ public class Belt : MonoBehaviour, ResourceTaker {
         if (progress > 1)
         {
             progress = 1;
-            if (output != null && output.accepts(cargo))
+            if (output != null && output.Accepts(cargo))
             {
-                output.take(cargo);
+                output.Take(cargo);
                 cargo = null;
                 progress = 0;
                 return;

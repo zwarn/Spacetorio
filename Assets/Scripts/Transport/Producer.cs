@@ -24,9 +24,9 @@ public class Producer : MonoBehaviour {
             resource = newResource;
         }
 
-        if (resource != null && output != null && output.accepts(resource))
+        if (resource != null && output != null && output.Accepts(resource))
         {
-            output.take(resource);
+            output.Take(resource);
             resource = null;
             timeToSpawn = Time.time + cooldown;
         }

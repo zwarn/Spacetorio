@@ -8,14 +8,14 @@ public class Consumer : MonoBehaviour, ResourceTaker {
     public List<String> acceptableTags;
     public Action<Resource> onConsume;
 
-    public bool accepts(Resource resource)
+    public bool Accepts(Resource resource)
     {
         return acceptableTags.Contains(resource.gameObject.tag);
     }
 
-    public void take(Resource resource)
+    public void Take(Resource resource)
     {
-        if (!accepts(resource)) throw new Exception("doesn't accept given resource");
+        if (!Accepts(resource)) throw new Exception("doesn't accept given resource");
         onConsume(resource);
         Destroy(resource);
     }
