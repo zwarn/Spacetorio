@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// 
+/// </summary>
 public class InputController : MonoBehaviour
 {
     public static InputController Instance;

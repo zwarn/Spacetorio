@@ -1,21 +1,35 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System;
-using System.Collections.Generic;
 
-public class Consumer : MonoBehaviour, ResourceTaker {
+/// <summary>
+/// A generic consumer that offers a <see cref="onConsume"/> 
+/// <see cref="Action"/>.
+/// </summary>
+public abstract class Consumer : MonoBehaviour, ResourceTaker {
 
-    public List<String> acceptableTags;
-    public Action<Resource> onConsume;
+    /// <summary>
+    /// The <see cref="Action"/> that is called when
+    /// <see cref="Take(Resource)"/> is called.
+    /// </summary>
+    public Action<Resource> onConsume;    
 
-    public bool Accepts(Resource resource)
-    {
-        return acceptableTags.Contains(resource.gameObject.tag);
+    /// <summary>
+    /// Always returns <c>true</c>. Should be overridden
+    /// by child classes.
+    /// </summary>
+    public virtual bool Accepts(Resource resource) {
+        return true;
     }
 
-    public void Take(Resource resource)
+    /// <summary>
+    /// Calls <see cref="onConsume"/> with the given
+    /// <see cref="Resource"/>. Afterwards destroys
+    /// it by calling 
+    /// <see cref="UnityEngine.Object.Destroy(UnityEngine.Object)"/>.
+    /// <param name="resource">The given resource.</param>
+    /// </summary>
+    public virtual void Take(Resource resource)
     {
-        if (!Accepts(resource)) throw new Exception("doesn't accept given resource");
         onConsume(resource);
         Destroy(resource);
     }
