@@ -32,6 +32,12 @@ public class ConveyerNode : ResourceTaker {
     private Resource cargo;
     private float progress;
 
+    public ConveyerNode (Vector3 from, float speed)
+    {
+        this.from = from;
+        this.speed = speed;
+    }
+
     /// <summary>
     /// Returns <c>true</c> iff the current <see cref="cargo"/> is null, regardless
     /// of the given resource.

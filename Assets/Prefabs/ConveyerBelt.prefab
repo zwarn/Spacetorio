@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 411482}
   - 95: {fileID: 9529550}
   - 212: {fileID: 21239800}
-  - 114: {fileID: 11403358}
   m_Layer: 0
   m_Name: ConveyerBelt
   m_TagString: Untagged
@@ -47,20 +46,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11403358
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f27d07c03c8ab5f4a94bbe07cd31d7bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  from: {x: 0, y: 0, z: 0}
-  to: {x: 0, y: 0, z: 0}
-  speed: 1
 --- !u!212 &21239800
 SpriteRenderer:
   m_ObjectHideFlags: 1

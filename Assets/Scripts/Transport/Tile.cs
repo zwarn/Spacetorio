@@ -6,7 +6,7 @@ public class Tile {
     /// <summary>
     /// The position of the tile.
     /// </summary>
-    public IntPosition Position;
+    public GridPosition Position;
 
     /// <summary>
     /// The object that lies on the tile.
@@ -19,7 +19,7 @@ public class Tile {
     /// </summary>
     public Tile(int x, int y)
     {
-        Position = new IntPosition(x, y);
+        Position = new GridPosition(x, y);
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ public class Tile {
     /// the given position.
     /// </summary>
     /// <param name="position"></param>
-    public Tile (IntPosition position)
+    public Tile (GridPosition position)
     {
         this.Position = position;
     }
